@@ -69,8 +69,11 @@ type MainWindow () as this =
             List.iter registerCommand actions
 
             setButtonsEnabled false
+            
+            buttons |> List.iter (fun x -> x.IsTabStop <- false)
 
             ipTextBox.Text <- settings.IpAddress
+            ipTextBox.IsTabStop <- false
             initHandlers ()
 
         do init ()
