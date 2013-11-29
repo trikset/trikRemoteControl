@@ -65,16 +65,16 @@
     <None Include="scripts/up.qts">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="scripts/onSpaceDown.qts">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="scripts/onSpaceUp.qts">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <Compile Include="Client.fs" />
     <Compile Include="Settings.fs" />
     <Compile Include="Main.fs" />
     <None Include="App.config" />
-    <None Include="scripts\onSpaceDown.qts">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="scripts\onSpaceUp.qts">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <Resource Include="App.xaml" />
     <Resource Include="MainWindow.xaml" />
   </ItemGroup>
