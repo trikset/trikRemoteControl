@@ -53,15 +53,26 @@ type MainWindow () as this =
                 let button = this.FindName buttonName :?> ButtonBase
                 Event.add handler button.Click
 
+            let command script =
+                let commandScriptFileName = "scripts/" + script + ".qts"
+                let eventHandler _ = sendCommand <| System.IO.File.ReadAllText commandScriptFileName
+                eventHandler
+
             let registerCommand (button, key) =
-                let commandScriptFileName = "scripts/" + button + ".qts"
-                let command _ = sendCommand <| System.IO.File.ReadAllText commandScriptFileName
-                registerButtonHandler button command 
+                registerButtonHandler button (command button)
                 this.KeyDown 
                 |> Event.filter (fun event -> event.Key = key) 
-                |> Event.add command
+                |> Event.add (command button)
 
-            registerButtonHandler "connect"   (fun _ ->                     
+            let registerCustomKey (key, onKeyDownScript, onKeyUpScript) =
+                this.KeyDown 
+                |> Event.filter (fun event -> event.Key = key) 
+                |> Event.add (command onKeyDownScript)
+                this.KeyUp
+                |> Event.filter (fun event -> event.Key = key) 
+                |> Event.add (command onKeyUpScript)
+
+            registerButtonHandler "connect" (fun _ ->                     
                     settings.IpAddress <- ipTextBox.Text
                     client.Connect(settings.IpAddress, port)
                 )
@@ -71,6 +82,8 @@ type MainWindow () as this =
             setButtonsEnabled false
             
             buttons |> List.iter (fun x -> x.IsTabStop <- false)
+
+            [Input.Key.Space, "onSpaceDown", "onSpaceUp"] |> List.iter registerCustomKey
 
             ipTextBox.Text <- settings.IpAddress
             ipTextBox.IsTabStop <- false
