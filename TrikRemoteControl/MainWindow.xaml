@@ -4,8 +4,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"        
              xmlns:my="clr-namespace:Main;assembly=TrikRemoteControl"
              ResizeMode="NoResize"
-             Width="300" 
-             Height="300"
+             Width="356" 
+             Height="372"
              Title="Консоль ТРИК"
              >
     <Grid>
@@ -21,19 +21,44 @@
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        
+
         <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Orientation="Horizontal" HorizontalAlignment="Right">
             <Label Content="IP контроллера" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" />
-            <TextBox Name="ipTextBox" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Width="100" />
+            <TextBox Name="ipTextBox" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Width="150"/>
             <ToggleButton Name="connect" Grid.Row="0" Grid.Column="2" Margin="2,11,2,11" Content="Подключиться" Height="22"/>
         </StackPanel>
-        
+
         <Label Name="connectionFailedLabel" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Content="Подключение не удалось" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Red" Visibility="Hidden"  />
 
         <Button Name="stop" Content="СТОП" Grid.Row="3" Grid.Column="1" Margin="2" />
-        <Button Name="up" Content="Вверх" Grid.Row="2" Grid.Column="1" Margin="2" />
+        <Button Name="forward" Content="Вперёд" Grid.Row="2" Grid.Column="1" Margin="2" />
         <Button Name="left" Content="Влево" Grid.Row="3" Grid.Column="0" Margin="2" />
         <Button Name="right" Content="Вправо" Grid.Row="3" Grid.Column="2" Margin="2"/>
-        <Button Name="down" Content="Вниз" Grid.Row="4" Grid.Column="1" Margin="2"/>
+        <Button Name="back" Content="Назад" Grid.Row="4" Grid.Column="1" Margin="2"/>
+
+        <Button Name="manipulatorClose" Grid.Row="2" Grid.Column="0" Margin="10">
+            <TextBlock>
+                Сжать <LineBreak /> манипулятор
+            </TextBlock>
+        </Button>
+
+        <Button Name="manipulatorOpen" Grid.Row="2" Grid.Column="2" Margin="10">
+            <TextBlock>
+                Разжать <LineBreak /> манипулятор
+            </TextBlock>
+        </Button>
+
+        <Button Name="manipulatorLeft" Grid.Row="4" Grid.Column="0" Margin="10">
+            <TextBlock>
+                Наклонить <LineBreak /> манипулятор <LineBreak /> влево
+            </TextBlock>
+        </Button>
+
+        <Button Name="manipulatorRight" Grid.Row="4" Grid.Column="2" Margin="10">
+            <TextBlock>
+                    Наклонить <LineBreak /> манипулятор <LineBreak /> вправо
+            </TextBlock>
+        </Button>
+
     </Grid>
 </my:MainWindow>

@@ -1,0 +1,3 @@
+brick.motor("JM3").setPower(brick.motor("JM3").power() - 20);
+brick.motor("M1").setPower(brick.motor("M1").power() - 20);
+brick.run();

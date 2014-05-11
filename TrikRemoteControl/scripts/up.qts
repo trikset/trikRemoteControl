@@ -1,2 +1,0 @@
-brick.powerMotor(3).setPower(brick.powerMotor(3).power() + 20)
-brick.powerMotor(4).setPower(brick.powerMotor(4).power() + 20)
