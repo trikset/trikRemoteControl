@@ -1,1 +1,2 @@
-﻿
+﻿brick.motor("JE2").setPower(brick.motor("JE2").power() - 20);
+brick.run();

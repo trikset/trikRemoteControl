@@ -30,33 +30,33 @@
 
         <Label Name="connectionFailedLabel" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Content="Подключение не удалось" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Red" Visibility="Hidden"  />
 
-        <Button Name="stop" Content="СТОП" Grid.Row="3" Grid.Column="1" Margin="2" />
-        <Button Name="forward" Content="Вперёд" Grid.Row="2" Grid.Column="1" Margin="2" />
-        <Button Name="left" Content="Влево" Grid.Row="3" Grid.Column="0" Margin="2" />
-        <Button Name="right" Content="Вправо" Grid.Row="3" Grid.Column="2" Margin="2"/>
-        <Button Name="back" Content="Назад" Grid.Row="4" Grid.Column="1" Margin="2"/>
+        <Button Name="stop" Content="СТОП [Backspace]" Grid.Row="3" Grid.Column="1" Margin="2" />
+        <Button Name="forward" Content="Вперёд [Up]" Grid.Row="2" Grid.Column="1" Margin="2" />
+        <Button Name="left" Content="Влево [Left]" Grid.Row="3" Grid.Column="0" Margin="2" />
+        <Button Name="right" Content="Вправо [Right]" Grid.Row="3" Grid.Column="2" Margin="2"/>
+        <Button Name="back" Content="Назад [Down]" Grid.Row="4" Grid.Column="1" Margin="2"/>
 
         <Button Name="manipulatorClose" Grid.Row="2" Grid.Column="0" Margin="10">
             <TextBlock>
-                Сжать <LineBreak /> манипулятор
+                Сжать <LineBreak /> манипулятор <LineBreak /> [Home]
             </TextBlock>
         </Button>
 
         <Button Name="manipulatorOpen" Grid.Row="2" Grid.Column="2" Margin="10">
             <TextBlock>
-                Разжать <LineBreak /> манипулятор
+                Разжать <LineBreak /> манипулятор  <LineBreak /> [Insert]
             </TextBlock>
         </Button>
 
         <Button Name="manipulatorLeft" Grid.Row="4" Grid.Column="0" Margin="10">
             <TextBlock>
-                Наклонить <LineBreak /> манипулятор <LineBreak /> влево
+                Наклонить <LineBreak /> манипулятор <LineBreak /> влево [Delete]
             </TextBlock>
         </Button>
 
         <Button Name="manipulatorRight" Grid.Row="4" Grid.Column="2" Margin="10">
             <TextBlock>
-                    Наклонить <LineBreak /> манипулятор <LineBreak /> вправо
+                    Наклонить <LineBreak /> манипулятор <LineBreak /> вправо [End]
             </TextBlock>
         </Button>
 
